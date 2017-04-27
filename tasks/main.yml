@@ -13,5 +13,8 @@
 - name: set marathon event stream
   copy: dest=/etc/marathon/conf/event_subscriber content="http_callback"
 
+- name: enable all logs
+  copy: dest=/etc/marathon/conf/logging_level content="all"
+
 - name: start marathon
   service: name=marathon state=restarted enabled=yes
